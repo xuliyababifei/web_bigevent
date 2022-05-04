@@ -31,6 +31,7 @@ $(function () {
             layer.close(index);
         });
     })
+
 })
 
 // 获取用户的基本信息
@@ -38,7 +39,6 @@ function getUserInfor() {
     $.ajax({
         method: "get",
         url: "/my/userinfo",
-
         success: function (res) {
             // console.log(res);
             if (res.status !== 0) {
@@ -51,11 +51,9 @@ function getUserInfor() {
     })
 
 }
-
 //渲染用户头像
 function renderAvatar(user) {
     var name = user.nickname || user.username;
-    // console.log(name[0]);
     //设置欢迎的文本
     $('#welcome').html("欢迎&nbsp;&nbsp;" + name);
     //设置头像
@@ -68,4 +66,8 @@ function renderAvatar(user) {
         $(".text-avatar").html(first).show();
     }
 }
+
+
+
+
 
